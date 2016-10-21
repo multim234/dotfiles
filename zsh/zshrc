@@ -12,3 +12,10 @@ export LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/li
 SAVEHIST=0
 export VISUAL=/bin/nvim
 zstyle ':completion:*:functions' ignored-patterns '_*'
+
+
+# ssh-agent
+
+if [[ -z "$SSH_AUTH_SOCK" ]]; then
+    eval $(ssh-agent)
+fi
