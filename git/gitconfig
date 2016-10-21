@@ -1,0 +1,17 @@
+[user]
+	name = Multim234
+	email = multim234@riseup.net
+	signingkey = multim234@riseup.net
+[color]
+	status = auto
+	branch = auto
+	ui = true
+[core]
+	editor = nvim
+[commit]
+	gpgsign = false
+[alias]
+	co = checkout
+	lg = log --graph --oneline
+[pull]
+	rebase = preserve

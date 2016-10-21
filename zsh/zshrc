@@ -1,0 +1,14 @@
+# oh my zsh conf
+export ZSH=/home/maxime/.oh-my-zsh
+ZSH_THEME="aussiegeek"
+plugins=(git archlinux systemd)
+
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/maxime/.gem/ruby/2.2.0/bin"
+
+source $ZSH/oh-my-zsh.sh
+alias desktop="startx /usr/bin/i3"
+alias less="/usr/share/nvim/runtime/macros/less.sh"
+export LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so'
+SAVEHIST=0
+export VISUAL=/bin/nvim
+zstyle ':completion:*:functions' ignored-patterns '_*'
