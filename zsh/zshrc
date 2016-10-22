@@ -2,20 +2,38 @@
 export ZSH=/home/maxime/.oh-my-zsh
 ZSH_THEME="aussiegeek"
 plugins=(git archlinux systemd)
-
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/maxime/.gem/ruby/2.2.0/bin"
-
 source $ZSH/oh-my-zsh.sh
+
+# export useful viariables
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/maxime/.gem/ruby/2.2.0/bin"
+export LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so'
+export VISUAL=/bin/nvim
+
+# Alias
 alias desktop="startx /usr/bin/i3"
 alias less="/usr/share/nvim/runtime/macros/less.sh"
-export LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so'
+
+# zsh configuration
 SAVEHIST=0
-export VISUAL=/bin/nvim
 zstyle ':completion:*:functions' ignored-patterns '_*'
 
-
+###
 # ssh-agent
+###
 
-if [[ -z "$SSH_AUTH_SOCK" ]]; then
+# test if there is no agent
+if [[ -z "$(ps ux | grep "ssh-agent$")" ]]; then
     eval $(ssh-agent)
+else
+    # if an agent exist get his infos
+    ssh_pid=$(ps ux | grep "ssh-agent$" | awk '{print $2}') 
+    agent_sock_id=$(expr $ssh_pid - 1)
+
+    # set his environment variables
+    SSH_AUTH_SOCK=$(find /tmp/ ! -readable -prune -o -name "*agent.$agent_sock_id" -print)
+    SSH_AGENT_PID=$ssh_pid
+    
+    # finnaly export them
+    export SSH_AUTH_SOCK
+    export SSH_AGENT_PID
 fi
