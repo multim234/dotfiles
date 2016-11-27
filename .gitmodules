@@ -1,0 +1,47 @@
+[submodule "ctrlp.vim"]
+    path = nvim/bundle/ctrlp.vim
+    url = https://github.com/ctrlpvim/ctrlp.vim.git
+
+[submodule "delimitMate"]
+    path = nvim/bundle/delimitMate
+    url = https://github.com/Raimondi/delimitMate.git
+
+[submodule "indentLine"]
+    path = nvim/bundle/indentLine
+    url = https://github.com/Yggdroot/indentLine.git
+
+[submodule "nerdcommenter"]
+    path = nvim/bundle/nerdcommenter
+    url = https://github.com/scrooloose/nerdcommenter.git
+
+[submodule "nerdtree"]
+    path = nvim/bundle/nerdtree
+    url = https://github.com/scrooloose/nerdtree.git
+
+[submodule "nextval"]
+    path = nvim/bundle/nextval
+    url = https://github.com/qwertologe/nextval.vim.git
+
+[submodule "syntastic"]
+    path = nvim/bundle/syntastic
+    url = https://github.com/vim-syntastic/syntastic.git
+
+[submodule "tagbar"]
+    path = nvim/bundle/tagbar
+    url = https://github.com/majutsushi/tagbar.git
+
+[submodule "ultisnips"]
+    path = nvim/bundle/ultisnips
+    url = https://github.com/SirVer/ultisnips.git
+
+[submodule "vim-airline"]
+    path = nvim/bundle/vim-airline
+    url = https://github.com/SirVer/ultisnips.git
+
+[submodule "vim-fugitive"]
+    path = nvim/bundle/vim-fugitive
+    url = https://github.com/SirVer/ultisnips.git
+
+[submodule "vim-snippets"]
+    path = nvim/bundle/vim-snippets
+    url = https://github.com/SirVer/ultisnips.git
