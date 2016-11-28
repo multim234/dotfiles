@@ -36,12 +36,12 @@
 
 [submodule "vim-airline"]
     path = nvim/bundle/vim-airline
-    url = https://github.com/SirVer/ultisnips.git
+    url = https://github.com/vim-airline/vim-airline.git
 
 [submodule "vim-fugitive"]
     path = nvim/bundle/vim-fugitive
-    url = https://github.com/SirVer/ultisnips.git
+    url = https://github.com/tpope/vim-fugitive.git
 
 [submodule "vim-snippets"]
     path = nvim/bundle/vim-snippets
-    url = https://github.com/SirVer/ultisnips.git
+    url = https://github.com/honza/vim-snippets.git
